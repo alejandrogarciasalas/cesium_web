@@ -4,6 +4,7 @@ from bokeh.plotting import figure
 from bokeh.embed import components
 from bokeh.layouts import gridplot
 from bokeh.palettes import PuBu as palette
+from bokeh.document import Document
 from cesium import featureset
 from .config import cfg
 
@@ -63,8 +64,8 @@ def feature_scatterplot(fset_path, features_to_plot):
     plot = gridplot(plots.tolist(), ncol=len(features_to_plot), mergetools=True)
     d = Document()
     d.add_root(p)
-    json = d.to_json()
-    return json
+    json_data = d.to_json()
+    return json_data, None
 
 
 #def prediction_heatmap(pred_path):

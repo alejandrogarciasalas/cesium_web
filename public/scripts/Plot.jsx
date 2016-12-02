@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Plotly from './custom-plotly';
 import { showNotification } from './Notifications';
-
+const Bokeh = require("bokehjs");
 
 class Plot extends Component {
   constructor(props) {
@@ -35,14 +35,16 @@ class Plot extends Component {
 
     let { data, layout } = plotData;
 
+    let plot_div = <div></div>
+    let doc = Bokeh.Document.from_json(plot_data);
+    Bokeh.embed.add_document_standalone(doc, plot_div);
+
     return (
       plotData &&
-        <div
-          ref={
-            (node) => {
-              node && Plotly.plot(node, data, layout);
-            }}
-        />
+      
+      <div>
+
+      </div>
     );
   }
 }

@@ -24,7 +24,9 @@
     "redux-form": "^5.3.3",
     "plotly.js": "latest",
     "webpack": "latest",
-    "react-tooltip": "latest"
+    "react-tooltip": "latest",
+    "bokehjs": "latest",
+    "fs": "latest"
   },
   "devDependencies": {
     "babel": "latest",

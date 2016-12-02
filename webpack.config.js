@@ -31,6 +31,7 @@ const config = {
       { test: /node_modules/, loader: 'ify' }
     ],
   },
+  target: 'node',
   plugins: [
     new webpack.ProvidePlugin({
       fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch'
@@ -39,6 +40,7 @@ const config = {
       $: "jquery",
       jQuery: "jquery",
     }),
+    new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"development"' }),
   ],
   resolve: {
     extensions: ['', '.js', '.jsx']
